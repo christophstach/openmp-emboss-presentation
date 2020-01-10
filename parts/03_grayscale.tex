@@ -1,0 +1,122 @@
+
+\section{Grayscale}
+
+\begin{frame}
+    \frametitle{Grayscale}
+
+    \begin{itemize}
+        \item Wandelt drei Farbwerte in einen Schwarz-Weis-Wert um \pause
+        \item Zwei verschiedene Formeln \pause
+        \item OpenCV\only<3->{\footnote{OpenCV wurde in der Implementierung verwendet}}: $ f(r, g, b) = 0.21r + 0.72g + 0.07b $  \pause
+        \item Luminosity: $ f(r, g, b) =  0.299r + 0.587g + 0.114b $ \pause
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Grayscale - Ergebnisse 1}
+
+    \begin{itemize}
+        \item dice.png
+        \item 800 x 600
+        \item 295 KB
+    \end{itemize}
+
+    \hfill
+    \hrule
+    \hfill
+
+    \begin{figure}[H]
+        \centering
+    
+        \includegraphics[width=0.30\textwidth]{images/dice.png}
+        \includegraphics[width=0.30\textwidth]{images/results/grayscale-cv.dice.png}
+        \includegraphics[width=0.30\textwidth]{images/results/grayscale-my.dice.png}
+
+        
+        \begin{center}
+            \caption{Grayscale results of OpenCV (middle) and self-implemented  Algorithm (right)}            
+        \end{center}
+
+        \label{fig:grayscale1}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Grayscale - Performance 1}
+
+    \input{parts/graphs/01_grayscale.tex}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Grayscale - Ergebnisse 2}
+
+    \begin{itemize}
+        \item dice\_large.png
+        \item 1754 x 1554
+        \item 1.5 MB
+    \end{itemize}
+
+    \hfill
+    \hrule
+    \hfill
+
+    \begin{figure}[H]
+        \centering
+    
+        \includegraphics[width=0.30\textwidth]{images/dice_large.png}
+        \includegraphics[width=0.30\textwidth]{images/results/grayscale-cv.dice_large.png}
+        \includegraphics[width=0.30\textwidth]{images/results/grayscale-my.dice_large.png}
+
+        
+        \begin{center}
+            \caption{Grayscale results of OpenCV (middle) and self-implemented  Algorithm (right)}            
+        \end{center}
+
+        \label{fig:grayscale2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Grayscale - Performance 2}
+
+    \input{parts/graphs/02_grayscale.tex}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Grayscale - Ergebnisse 3}
+
+    \begin{itemize}
+        \item pnglogo-blk.png
+        \item 1024 x 768
+        \item 516 KB
+    \end{itemize}
+
+    \hfill
+    \hrule
+    \hfill
+
+    \begin{figure}[H]
+        \centering
+    
+        \includegraphics[width=0.30\textwidth]{images/pnglogo-blk.png}
+        \includegraphics[width=0.30\textwidth]{images/results/grayscale-cv.pnglogo-blk.png}
+        \includegraphics[width=0.30\textwidth]{images/results/grayscale-my.pnglogo-blk.png}
+
+        
+        \begin{center}
+            \caption{Grayscale results of OpenCV (middle) and self-implemented  Algorithm (right)}            
+        \end{center}
+
+        \label{fig:grayscale3}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Grayscale - Performance 3}
+
+    \input{parts/graphs/03_grayscale.tex}
+
+\end{frame}

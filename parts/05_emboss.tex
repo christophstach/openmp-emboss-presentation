@@ -1,0 +1,118 @@
+\section{Emboss}
+
+\begin{frame}
+    \frametitle{Emboss\footnote{\url{http://faculty.ycp.edu/~dhovemey/spring2011/cs365/labs/lab6.html}}}
+
+    \begin{itemize}
+        \item Jeder Pixel $ p^{rgba}_{ij} $ wird mit oben-links liegendem Pixel $ p^{rgba}_{i-1j-1} $ verglichen \pause
+        \item Die größte, absolute Differenz wird als Referenzwert genommen
+        \item $ d_{ij} = max(|p^{r}_{ij} - p^{r}_{i-1j-1}|, |p^{g}_{ij} - p^{g}_{i-1j-1}|, |p^{b}_{ij} - p^{b}_{i-1j-1}|) $ \pause
+        \item Die Werte der Channels für den neuen Pixel entsprechenden dem Referenzwert addiert mit 128 und beschränkt auf 0-255, der Alpha-Channel vom Ausgangspixel übernommen \pause
+        \item $ p' = min(0, max(255, d_{ij} + 128)) $
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Emboss - Ergebnisse 1}
+
+    \begin{itemize}
+        \item dice.png
+        \item 800 x 600
+        \item 295 KB
+    \end{itemize}
+
+    \hfill
+    \hrule
+    \hfill
+
+    \begin{figure}[H]
+        \centering
+    
+        \includegraphics[width=0.30\textwidth]{images/dice.png}
+        \includegraphics[width=0.30\textwidth]{images/results/emboss-my.dice.png}
+
+        
+        \begin{center}
+            \caption{Emboss results of self-implemented Algorithm (right)}
+        \end{center}
+
+        \label{fig:emboss1}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Emboss - Performance 1}
+
+    \input{parts/graphs/07_emboss.tex}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Emboss - Ergebnisse 2}
+
+    \begin{itemize}
+        \item dice\_large.png
+        \item 1754 x 1554
+        \item 1.5 MB
+    \end{itemize}
+
+    \hfill
+    \hrule
+    \hfill
+
+    \begin{figure}[H]
+        \centering
+    
+        \includegraphics[width=0.30\textwidth]{images/dice_large.png}
+        \includegraphics[width=0.30\textwidth]{images/results/emboss-my.dice_large.png}
+
+        
+        \begin{center}
+            \caption{Emboss results of self-implemented Algorithm (right)}      
+        \end{center}
+
+        \label{fig:emboss2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Emboss - Performance 2}
+
+    \input{parts/graphs/08_emboss.tex}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Emboss - Ergebnisse 3}
+
+    \begin{itemize}
+        \item pnglogo-blk.png
+        \item 1024 x 768
+        \item 516 KB
+    \end{itemize}
+
+    \hfill
+    \hrule
+    \hfill
+
+    \begin{figure}[H]
+        \centering
+    
+        \includegraphics[width=0.30\textwidth]{images/pnglogo-blk.png}
+        \includegraphics[width=0.30\textwidth]{images/results/emboss-my.pnglogo-blk.png}
+
+        
+        \begin{center}
+            \caption{Emboss results of self-implemented Algorithm (right)}
+        \end{center}
+
+        \label{fig:emboss3}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Emboss - Performance 3}
+
+    \input{parts/graphs/09_emboss.tex}
+
+\end{frame}

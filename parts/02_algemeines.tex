@@ -1,0 +1,56 @@
+\section {Allgemeines}
+
+
+\begin{frame}
+    \frametitle{Allgemeines - Projektaufbau}
+
+    \begin{itemize}
+        \item Parallelisierung: OpenMP\only<1->{\footnote{\url{https://www.openmp.org/}}} \pause
+        \item Buildsystem: CMake\only<2->{\footnote{\url{https://cmake.org/}}} \pause
+        \item Packagemanager: CPM\only<3->{\footnote{\url{https://github.com/TheLartians/CPM.cmake}}} \pause
+        \item CMD-Argumentparser: cxxopts\only<4->{\footnote{\url{https://github.com/jarro2783/cxxopts}}}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Allgemeines - Eckdaten}
+
+    \begin{itemize}
+        \item Alle Algorithmen bestehen aus 2 geschachtelten For-Schleifen, die über alle Pixel iterieren \pause
+        \item Zeitmessungen mit 1-16 Threads durchgeführt \pause
+        \item Arithmetisches Mittel über 20 Iterationen \pause
+        \item Drei Varianten pro Algorithmus: Äußere Schleife, Innere Schleife, Collapse(2)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Allgemeines - Implementationsvarianten}
+
+
+    \begin{minted}{cpp}
+#pragma omp parallel for default(none) shared(srcImage, destImage)
+for (int row = 0; row < srcImage.rows; row++) {
+    for (int col = 0; col < srcImage.cols; col++) {
+    \end{minted}
+    \pause
+
+    \hrule
+
+    \begin{minted}{cpp}
+for (int row = 0; row < srcImage.rows; row++) {
+    #pragma omp parallel for default(none) shared(srcImage, destImage, row)
+    for (int col = 0; col < srcImage.cols; col++) {
+    \end{minted}
+    \pause
+
+    \hrule
+
+    \begin{minted}{cpp}
+#pragma omp parallel for collapse(2) default(none) shared(srcImage, destImage)
+for (int row = 0; row < srcImage.rows; row++) {
+    for (int col = 0; col < srcImage.cols; col++) {
+    \end{minted}
+
+    
+\end{frame}
