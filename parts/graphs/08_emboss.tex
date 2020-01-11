@@ -1,0 +1,33 @@
+\begin{center}
+    \begin{figure}[H]
+        \centering
+
+        \begin{tikzpicture}
+            \begin{axis}[
+                title={},
+                width=0.75\textwidth,
+                xlabel={Number of Threads},
+                ylabel={Execution Time (in ms)},
+                xmin=0,
+                ymin=0,
+                grid=major
+            ]
+                \addplot coordinates {
+                    (1,214.884)(2,108.496)(3,72.487)(4,874.89)(5,677.734)(6,413.441)(7,53.8604)(8,424.53)(9,417.405)(10,368.377)(11,326.656)(12,320.394)(13,290.219)(14,271.449)(15,249.741)(16,234.925)
+                };
+                \addlegendentry{Outer For-Loop}
+
+                \addplot coordinates {
+                    (1,207.426)(2,106.252)(3,1172.46)(4,891.04)(5,718.439)(6,751.246)(7,651.642)(8,579.481)(9,680.238)(10,646.528)(11,651.56)(12,653.486)(13,653.193)(14,660.897)(15,710.533)(16,734.047)
+                };
+                \addlegendentry{Inner For-Loop}       
+
+                \addplot coordinates {
+                    (1,208.478)(2,105.691)(3,70.8347)(4,62.5586)(5,70.8706)(6,61.2197)(7,180.496)(8,451.336)(9,415.158)(10,373.54)(11,323.338)(12,303.868)(13,271.512)(14,260.139)(15,242.993)(16,230.13)
+                };
+                \addlegendentry{Collapse}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Emboss Performance Tests dice.png}
+    \end{figure}
+\end{center}

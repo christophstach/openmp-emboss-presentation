@@ -1,0 +1,33 @@
+\begin{center}
+    \begin{figure}[H]
+        \centering
+
+        \begin{tikzpicture}
+            \begin{axis}[
+                title={},
+                width=0.75\textwidth,
+                xlabel={Number of Threads},
+                ylabel={Execution Time (in ms)},
+                xmin=0,
+                ymin=0,
+                grid=major
+            ]
+                \addplot coordinates {
+                    (1,61.9948)(2,30.9297)(3,21.0096)(4,195.071)(5,19.0323)(6,17.7001)(7,15.2288)(8,115.462)(9,117.034)(10,111.196)(11,100.824)(12,92.0202)(13,82.4866)(14,76.1007)(15,74.8285)(16,71.869)
+                };
+                \addlegendentry{Outer For-Loop}
+
+                \addplot coordinates {
+                    (1,60.0626)(2,31.1182)(3,21.2698)(4,261.318)(5,221.825)(6,199.614)(7,197.123)(8,181.11)(9,273.881)(10,262.932)(11,263.523)(12,269.018)(13,278.166)(14,276.316)(15,282.999)(16,301.008)
+                };
+                \addlegendentry{Inner For-Loop}       
+
+                \addplot coordinates {
+                    (1,60.0986)(2,30.07)(3,326.14)(4,251.012)(5,115.601)(6,17.5882)(7,62.347)(8,112.387)(9,99.263)(10,107.042)(11,96.5844)(12,88.2291)(13,81.6067)(14,77.2644)(15,71.0032)(16,65.8924)
+                };
+                \addlegendentry{Collapse}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Emboss Performance Tests pnglogo-blk.png}
+    \end{figure}
+\end{center}
